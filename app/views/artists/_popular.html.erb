@@ -1,0 +1,12 @@
+<h2 class="mt-4 text-header-2">Popular</h2>
+<%= turbo_frame_tag :popular, target: "_top" do %>
+  <ul class="tracks mt-2">
+    <%= render tracks, enqueueble: true %>
+    <li class="track">
+      <span class="track--number"></span>
+      <% if expand_link %>
+        <%= link_to 'Load more', artist_path(artist), data: {"turbo-frame" => "_self"}, class: "text-secondary hover:text-primary transition-colors" %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
