@@ -1,4 +1,5 @@
 import { Application } from "@hotwired/stimulus";
+import PasswordVisibility from 'stimulus-password-visibility'
 
 const application = Application.start();
 
@@ -9,3 +10,6 @@ window.Stimulus = application;
 // Eager load all controllers defined in the import map under controllers/**/*_controller
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading";
 eagerLoadControllersFrom("controllers", application);
+
+
+application.register('password-visibility', PasswordVisibility)
