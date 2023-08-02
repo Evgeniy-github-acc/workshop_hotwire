@@ -1,23 +1,9 @@
-<div class="artist-header">
-  <div class="artist-image">
-    <% if artist.cover.attached? %>
-      <%= image_tag artist.cover %>
-    <% end %>
-  </div>
-  <div class="artist-info">
-    <div class="flex items-center">
-      <h1 class="text-header-2"><%= artist.name %></h1>
-    </div>
-    <div>
-      <% artist.tags.each do |tag| %>
-        <span class="meta"><%= tag %></span>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render partial: 'header', locals: { artist: }  %>
 
 <hr class="my-4">
-<%= render partial: "popular", locals: { tracks:, artist:, expand_link: true } %>
+
+  <%= render partial: "popular", locals: { tracks:, artist:, expand_link: true } %>
+
 <hr class="my-4"/>
 
 <%= render partial: "discography", locals: {artist:, albums:} %>

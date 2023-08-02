@@ -39,6 +39,8 @@ gem "bootsnap", require: false
 # Automatically enable frozen_string_literals for project's files [https://github.com/ruby-next/freezolite]
 gem "freezolite", require: false
 
+gem 'pagy', '~> 6.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug"
@@ -60,4 +62,7 @@ gem "bcrypt", "~> 3.1.7"
 
 group :development do
   eval_gemfile "gemfiles/rubocop.gemfile"
+  gem "better_errors"
+  gem "binding_of_caller"
+
 end
